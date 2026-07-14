@@ -1,29 +1,37 @@
-
 # NOVA-CAT
 
-CO₂ → CO 전이금속 단원자 촉매를 대상으로 하는 다목적 의사결정 시뮬레이터입니다.
+CO₂ → CO 전이금속 단원자 촉매 다목적 의사결정 시뮬레이터
 
-## 실행 방법
+## 로컬 실행
 
 ```bash
-cd NOVA_CAT_simulator
 python -m pip install -r requirements.txt
-streamlit run app.py
+python -m streamlit run app.py
 ```
 
-브라우저가 자동으로 열리지 않으면 터미널에 표시되는 주소(보통 http://localhost:8501)를 엽니다.
+## GitHub 업로드
 
-## 핵심 기능
+저장소 최상위 폴더에 아래 파일이 바로 보여야 합니다.
 
-- 5개 성능 지표 가중치 조절
-- 선택성 중심 / 생산성 중심 / 균형형 시나리오
-- 사바티에 원리를 반영한 흡착에너지·d-band center 적합성 점수
-- 종합 순위
-- 파레토 최적 후보 분석
-- 무작위 가중치 기반 민감도 분석
+- `app.py`
+- `requirements.txt`
+- `README.md`
+- `.streamlit/config.toml`
+
+## Streamlit Community Cloud 배포
+
+1. GitHub 저장소에 파일 업로드
+2. Streamlit Community Cloud 접속
+3. `New app`
+4. 저장소와 branch 선택
+5. Main file path에 `app.py` 입력
+6. Deploy
+
+## 주요 기능
+
+- 가중치 조절
+- 균형형 / 선택성 중심 / 생산성 중심 시나리오
+- 종합점수
+- 파레토 분석
+- 민감도 분석
 - 원자료 CSV 다운로드
-
-## 주의
-
-문헌별 실험 조건과 계산 정의가 다를 수 있으므로, 본 프로그램은 절대적 성능 판정기가 아니라
-문헌 데이터를 활용한 탐색적 의사결정 도구입니다.
